@@ -25,7 +25,10 @@ type BodyEncoding = "manual" | "automatic";
 // Before serving a 404, we check the cache to see if we've served this asset recently
 // and if so, serve it from the cache instead of responding with a 404.
 // This gives a bit of a grace period between deployments for any clients browsing the old deployment.
-export const ASSET_PRESERVATION_CACHE = "assetPreservationCacheV2";
+export const ASSET_PRESERVATION_CACHE = "assetPreservationCache";
+// V2 stores the content hash instead of the asset.
+// TODO: Remove V1 once we've fully migrated to V2
+export const ASSET_PRESERVATION_CACHE_V2 = "assetPreservationCacheV2";
 const CACHE_CONTROL_PRESERVATION = "public, s-maxage=604800"; // 1 week
 
 export const CACHE_CONTROL_BROWSER = "public, max-age=0, must-revalidate"; // have the browser check in with the server to make sure its local cache is valid before using it
@@ -531,14 +534,14 @@ export async function generateHandler<
 				waitUntil(
 					(async () => {
 						try {
-							const assetPreservationCache = await caches.open(
-								ASSET_PRESERVATION_CACHE
+							const assetPreservationCacheV2 = await caches.open(
+								ASSET_PRESERVATION_CACHE_V2
 							);
 
 							let shouldUpdateCache = true;
 
 							// Check if the asset has changed since last written to cache
-							const match = await assetPreservationCache.match(request);
+							const match = await assetPreservationCacheV2.match(request);
 							if (match) {
 								const cachedAssetKey = await match.text();
 								if (cachedAssetKey === assetKey) {
@@ -557,7 +560,7 @@ export async function generateHandler<
 								);
 								preservedResponse.headers.set("x-robots-tag", "noindex");
 
-								await assetPreservationCache.put(
+								await assetPreservationCacheV2.put(
 									getCacheKey(),
 									preservedResponse
 								);
@@ -595,12 +598,22 @@ export async function generateHandler<
 	async function notFound(): Promise<Response> {
 		if (caches) {
 			try {
-				const assetPreservationCache = await caches.open(
-					ASSET_PRESERVATION_CACHE
+				const assetPreservationCacheV2 = await caches.open(
+					ASSET_PRESERVATION_CACHE_V2
 				);
-				const preservedResponse = await assetPreservationCache.match(
+				let preservedResponse = await assetPreservationCacheV2.match(
 					getCacheKey()
 				);
+
+				// Continue serving from V1 preservation cache for some time to
+				// prevent 404s during the migration to V2
+				const cutoffDate = new Date("2024-02-25");
+				if (!preservedResponse && Date.now() < cutoffDate.getTime()) {
+					const assetPreservationCache = await caches.open(
+						ASSET_PRESERVATION_CACHE
+					);
+					preservedResponse = await assetPreservationCache.match(request.url);
+				}
 
 				if (preservedResponse) {
 					if (isNullBodyStatus(preservedResponse.status)) {

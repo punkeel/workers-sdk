@@ -56,6 +56,8 @@ jobs:
 
       - name: Install node-gyp
         run: yarn global add node-gyp
+        env:
+          NPM_PUBLISH_TOKEN: ""
 
       - name: Build Quick Edit
         run: cd packages/quick-edit && yarn setup && yarn custom:build

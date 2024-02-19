@@ -54,6 +54,9 @@ jobs:
         env:
           CI_OS: ${{ runner.os }}
 
+      - name: Install node-gyp
+        run: yarn global add node-gyp
+
       - name: Build Quick Edit
         run: cd packages/quick-edit && yarn setup && yarn custom:build
         env:

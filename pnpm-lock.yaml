@@ -1807,6 +1807,9 @@ importers:
       remove-accents-esm:
         specifier: ^0.0.1
         version: 0.0.1
+      s3-etag:
+        specifier: ^1.0.4
+        version: 1.0.4
       semiver:
         specifier: ^1.1.0
         version: 1.1.0
@@ -18536,6 +18539,11 @@ packages:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
       tslib: 2.5.3
+    dev: true
+
+  /s3-etag@1.0.4:
+    resolution: {integrity: sha512-9Ty/rtv1kTTol3esK8/t6Bz7u8pM1RKaut5b/OecqyFSNVOdjjrZHqMPOGGgvNldrEzq6YnmOySRti1R26ExDg==}
+    engines: {node: '>=14.0.0', npm: '>=7'}
     dev: true
 
   /sade@1.8.1:

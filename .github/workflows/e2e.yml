@@ -56,7 +56,7 @@ jobs:
         working-directory: packages/wrangler
 
       - name: Pack Wrangler
-        run: pnpm pack --pack-destination $HOME
+        run: pnpm pack --pack-destination .
         env:
           NODE_ENV: "production"
         working-directory: packages/wrangler
@@ -64,7 +64,7 @@ jobs:
       - name: Find Wrangler
         shell: bash
         id: "find-wrangler"
-        run: echo "dir=$(ls $HOME/wrangler-*.tgz)" >> $GITHUB_OUTPUT;
+        run: echo "dir=$(ls wrangler-*.tgz)" >> $GITHUB_OUTPUT;
 
       - name: Find pnpm global dir
         shell: bash

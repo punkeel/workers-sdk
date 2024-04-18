@@ -64,7 +64,7 @@ jobs:
         working-directory: packages/wrangler
 
       - name: Pack Wrangler
-        run: pnpm pack --pack-destination .
+        run: pnpm pack --pack-destination ../..
         env:
           NODE_ENV: "production"
         working-directory: packages/wrangler

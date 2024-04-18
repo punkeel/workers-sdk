@@ -19,7 +19,7 @@
 		},
 		"build": { "dependsOn": ["^build"] },
 		"test": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build", "build"]
 		},
 		"test:watch": {
 			"cache": false
@@ -28,7 +28,7 @@
 		"check:type": {},
 		"type:tests": {},
 		"test:ci": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build", "build"]
 		},
 		"test:e2e": {},
 		"//#check:format": { "cache": true }

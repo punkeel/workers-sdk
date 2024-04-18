@@ -124,7 +124,7 @@ jobs:
   test-fixtures:
     timeout-minutes: 30
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.os }}-test
+      group: ${{ github.workflow }}-${{ github.ref }}-${{ matrix.os }}-fixture-test
       cancel-in-progress: true
 
     name: "Fixture tests"

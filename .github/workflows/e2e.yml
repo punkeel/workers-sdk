@@ -64,15 +64,10 @@ jobs:
         working-directory: packages/wrangler
 
       - name: Pack Wrangler
-        run: pnpm pack --pack-destination ../..
+        run: pnpm pack --pack-destination $HOME
         env:
           NODE_ENV: "production"
         working-directory: packages/wrangler
-
-      - name: Find Wrangler
-        shell: bash
-        id: "find-wrangler"
-        run: echo "dir=$(ls wrangler-*.tgz)" >> $GITHUB_OUTPUT;
 
       - name: Find pnpm global dir
         shell: bash
@@ -81,7 +76,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pnpm add ${{ steps.find-wrangler.outputs.dir}} --global
+          pnpm add $(ls $HOME/wrangler-*.tgz) --global
           pnpm run test:e2e
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.TEST_CLOUDFLARE_API_TOKEN }}

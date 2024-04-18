@@ -35,6 +35,7 @@
 		},
 		"type:tests": {},
 		"test:ci": {},
+		"test:e2e": {},
 		"//#check:format": { "cache": true }
 	}
 }

@@ -3,7 +3,7 @@ name: E2E tests
 on:
   push:
     branches:
-      - changeset-release/main
+      - main
   pull_request:
     types: [synchronize, opened, reopened, labeled, unlabeled]
   repository_dispatch:

@@ -1618,9 +1618,6 @@ importers:
       '@types/body-parser':
         specifier: ^1.19.2
         version: 1.19.2
-      '@types/busboy':
-        specifier: ^1.5.0
-        version: 1.5.0
       '@types/command-exists':
         specifier: ^1.2.0
         version: 1.2.0
@@ -1663,9 +1660,6 @@ importers:
       '@types/signal-exit':
         specifier: ^3.0.1
         version: 3.0.1
-      '@types/source-map-support':
-        specifier: ^0.5.7
-        version: 0.5.7
       '@types/supports-color':
         specifier: ^8.1.1
         version: 8.1.1
@@ -1717,9 +1711,6 @@ importers:
       express:
         specifier: ^4.18.1
         version: 4.18.1(supports-color@9.2.2)
-      finalhandler:
-        specifier: ^1.2.0
-        version: 1.2.0(supports-color@9.2.2)
       find-up:
         specifier: ^6.3.0
         version: 6.3.0
@@ -1750,12 +1741,6 @@ importers:
       ink-table:
         specifier: ^3.0.0
         version: 3.0.0(ink@3.2.0)(react@17.0.2)
-      ink-testing-library:
-        specifier: ^2.1.0
-        version: 2.1.0(@types/react@17.0.52)
-      ink-text-input:
-        specifier: ^4.0.3
-        version: 4.0.3(ink@3.2.0)(react@17.0.2)
       is-ci:
         specifier: ^3.0.1
         version: 3.0.1
@@ -1801,9 +1786,6 @@ importers:
       react-error-boundary:
         specifier: ^3.1.4
         version: 3.1.4(react@17.0.2)
-      remove-accents-esm:
-        specifier: ^0.0.1
-        version: 0.0.1
       semiver:
         specifier: ^1.1.0
         version: 1.1.0
@@ -7258,12 +7240,6 @@ packages:
       '@types/node': 18.16.10
     dev: true
 
-  /@types/busboy@1.5.0:
-    resolution: {integrity: sha512-ncOOhwmyFDW76c/Tuvv9MA9VGYUCn8blzyWmzYELcNGDb0WXWLSmFi7hJq25YdRBYJrmMBB5jZZwUjlJe9HCjQ==}
-    dependencies:
-      '@types/node': 18.16.10
-    dev: true
-
   /@types/cacheable-request@6.0.3:
     resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}
     dependencies:
@@ -7616,12 +7592,6 @@ packages:
 
   /@types/signal-exit@3.0.1:
     resolution: {integrity: sha512-OSitN9PP9E/c4tlt1Qdj3CAz5uHD9Da5rhUqlaKyQRCX1T7Zdpbk6YdeZbR2eiE2ce+NMBgVnMxGqpaPSNQDUQ==}
-    dev: true
-
-  /@types/source-map-support@0.5.7:
-    resolution: {integrity: sha512-rJqBfLel8jPuL5MwXxMH2Cdb6D80Snu3YJxDE+VJAmtT04l7j3OA7h+FYXlYDys0WeBVH/MPbExj3B8NCaDw9g==}
-    dependencies:
-      source-map: 0.6.1
     dev: true
 
   /@types/stack-utils@2.0.1:
@@ -13808,31 +13778,6 @@ packages:
       react: 17.0.2
     dev: true
 
-  /ink-testing-library@2.1.0(@types/react@17.0.52):
-    resolution: {integrity: sha512-7TNlOjJlJXB33vG7yVa+MMO7hCjaC1bCn+zdpSjknWoLbOWMaFdKc7LJvqVkZ0rZv2+akhjXPrcR/dbxissjUw==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      '@types/react': '>=16.8.0 || 18'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 17.0.52
-    dev: true
-
-  /ink-text-input@4.0.3(ink@3.2.0)(react@17.0.2):
-    resolution: {integrity: sha512-eQD01ik9ltmNoHmkeQ2t8LszYkv2XwuPSUz3ie/85qer6Ll/j0QSlSaLNl6ENHZakBHdCBVZY04iOXcLLXA0PQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      ink: ^3.0.0-3
-      react: ^16.5.2 || ^17.0.0 || 18
-    dependencies:
-      chalk: 4.1.2
-      ink: 3.2.0(patch_hash=iiwbcf44d6ccmi6a27ljqs7qce)(@types/react@17.0.52)(react@17.0.2)
-      react: 17.0.2
-      type-fest: 0.15.1
-    dev: true
-
   /ink@3.2.0(patch_hash=iiwbcf44d6ccmi6a27ljqs7qce)(@types/react@17.0.52)(react@17.0.2):
     resolution: {integrity: sha512-firNp1q3xxTzoItj/eOOSZQnYSlyrWks5llCTVX37nJ59K3eXbQ8PtzCguqo8YI19EELo5QxaKnJd4VxzhU8tg==}
     engines: {node: '>=10'}
@@ -18275,10 +18220,6 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /remove-accents-esm@0.0.1:
-    resolution: {integrity: sha512-Nbwv7X61l7a8Dgj1hdt1rM8scr4NntlrtSMW0r2YJPK7/NygnjrdVXwhs8HaQBy2x735WvNqHHuRNeswhR4ngQ==}
-    dev: true
-
   /remove-accents@0.4.2:
     resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
     dev: false
@@ -19939,11 +19880,6 @@ packages:
 
   /type-fest@0.13.1:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
-    engines: {node: '>=10'}
-    dev: true
-
-  /type-fest@0.15.1:
-    resolution: {integrity: sha512-n+UXrN8i5ioo7kqT/nF8xsEzLaqFra7k32SEsSPwvXVGyAcRgV/FUQN/sgfptJTR1oRmmq7z4IXMFSM7im7C9A==}
     engines: {node: '>=10'}
     dev: true
 

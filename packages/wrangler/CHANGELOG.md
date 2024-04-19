@@ -1,5 +1,13 @@
 # wrangler
 
+## 3.51.3
+
+### Patch Changes
+
+- [#5610](https://github.com/cloudflare/workers-sdk/pull/5610) [`24840f6`](https://github.com/cloudflare/workers-sdk/commit/24840f67b6495a664f5463697aa49fa9478435b9) Thanks [@SuperchupuDev](https://github.com/SuperchupuDev)! - Mark `ts-json-schema-generator` as a dev dependency
+
+- [#5616](https://github.com/cloudflare/workers-sdk/pull/5616) [`c6312b5`](https://github.com/cloudflare/workers-sdk/commit/c6312b5017279b31ce99c761e2063973f7d948bf) Thanks [@webbertakken](https://github.com/webbertakken)! - fix: broken link to durable object migrations docs
+
 ## 3.51.2
 
 ### Patch Changes

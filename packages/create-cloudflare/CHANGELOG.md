@@ -1,5 +1,11 @@
 # create-cloudflare
 
+## 2.21.0
+
+### Minor Changes
+
+- [#5637](https://github.com/cloudflare/workers-sdk/pull/5637) [`b41c4ed`](https://github.com/cloudflare/workers-sdk/commit/b41c4edc2e4bf1da11ebff98c38f92f8057d5c59) Thanks [@joshthoward](https://github.com/joshthoward)! - feat: change Durable Objects "Hello, World!" template to use RPC methods
+
 ## 2.20.1
 
 ### Patch Changes
